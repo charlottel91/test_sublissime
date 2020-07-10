@@ -7,7 +7,6 @@ import CardsPokemon from './CardsPokemons';
 const ListPokemon = ({ navigation }) => {
     const [list, setList] = useState([])
     const dispatch = useDispatch()
-    console.log(list)
 
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=50`)
@@ -17,20 +16,21 @@ const ListPokemon = ({ navigation }) => {
 
     const handleClickPokemon = (i) => {
         dispatch({ type: "ADD_POKEMON", pokemon: list[i] })
-
     }
 
     return (
         <View>
             {list && list.map((el, i) => {
                 return (
-                    <TouchableHighlight key={i} 
-                    onPress={() =>
-                        navigation.navigate('Profile')
-                    } 
-                    onClick={handleClickPokemon(i)}>
-                        <Text>{el.name}</Text>
-                        <CardsPokemon url={el.url} />
+                    <TouchableHighlight key={i}
+                        onPress={() =>
+                            navigation.navigate('Profile')
+                        }
+                        onClick={() => handleClickPokemon(i)}>
+                        <View>
+                            <Text>{el.name}</Text>
+                            <CardsPokemon url={el.url} />
+                        </View>
                     </TouchableHighlight>
                 )
             })}

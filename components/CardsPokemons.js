@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Image, StyleSheet, Text, View, Button } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import axios from 'axios'
 
 const CardsPokemon = (props) => {
@@ -14,7 +14,7 @@ const CardsPokemon = (props) => {
 
     return (
         <View style={styles.image}>
-            <Image source={`${image}`} />
+            <Image source={image} />
         </View>
     )
 }

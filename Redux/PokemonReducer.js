@@ -1,8 +1,8 @@
 export const pokemons = {}
 
-const pokemonReducers = (state=pokemon, {type, pokemon}) => {
+const pokemonReducers = (state=pokemons, {type, pokemon}) => {
     switch(type) {
-        case "ADD POKEMON":
+        case "ADD_POKEMON":
             return{
                 ...state, pokemon: {...state, pokemon}
             }
