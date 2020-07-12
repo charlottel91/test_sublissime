@@ -1,12 +1,13 @@
-export const pokemons = {}
+const pokemons = {}
 
-const pokemonReducers = (state=pokemons, {type, pokemon}) => {
-    switch(type) {
+const pokemonReducer = (state = pokemons, { type, pokemon }) => {
+    switch (type) {
         case "ADD_POKEMON":
-            return{
-                ...state, pokemon: {...state, pokemon}
+            return {
+                ...state, pokemon
             }
+        default: return state
     }
 }
 
-export default pokemonReducers
+export default pokemonReducer

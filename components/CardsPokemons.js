@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import axios from 'axios'
 
 const CardsPokemon = (props) => {
     const [image, setImage] = useState()
-    console.log(image)
 
     useEffect(() => {
         axios.get(`${props.url}`)
@@ -13,17 +12,16 @@ const CardsPokemon = (props) => {
     }, [props.url])
 
     return (
-        <View style={styles.image}>
-            <Image source={image} />
+        <View>
+            <Image style={styles.url} source={ image } />
         </View>
     )
 }
 
-const styles = StyleSheet.create({
-    image: {
-        width: 70,
-        height: 70,
-        margin: 20
+const styles = StyleSheet.create({ 
+    url: {
+        width: 80,
+        height: 80,
     }
 })
 

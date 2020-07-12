@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, TouchableHighlight, View, Button } from 'react-native';
+import { Image, StyleSheet, TouchableHighlight, View } from 'react-native';
 import Pokedex from '../assets/pokedex.png'
 import Pokeball from '../assets/pokeball.png'
 
