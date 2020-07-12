@@ -10,9 +10,6 @@ const Profile = ({ navigation }) => {
     const [image, setImage] = useState()
     const [stats, setStats] = useState()
     const [attacks, setAttacks] = useState()
-    console.log(pokemon)
-    console.log(attacks);
-
 
     useEffect(() => {
         Axios.get(`${pokemon.url}`)
